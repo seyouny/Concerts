@@ -1,0 +1,47 @@
+{
+  "name": "concerts",
+  "version": "1.0.0",
+  "homepage": "https://seyouny.github.io/concerts/",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'react-app/*'\" \"npm run client\"",
+    "client": "cd react-app && npm run start",
+    "install": "cd react-app && npm install",
+    "build": "cd react-app && npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seyouny/concerts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seyouny/concerts/issues"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "express": "^4.17.1",
+    "gh-pages": "^3.1.0",
+    "if-env": "^1.0.4",
+    "jquery": "^3.5.1",
+    "react-foundation": "^0.9.6",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.2.0",
+    "react-player": "^2.9.0",
+    "react-router-dom": "^5.2.0",
+    "react-script-hook": "^1.3.0",
+    "react-script-tag": "^1.1.2",
+    "react-swipeable-views": "^0.13.9"
+  }
+}
